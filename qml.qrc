@@ -1,0 +1,17 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>CustomButton.qml</file>
+        <file>CustomText.qml</file>
+        <file>CustomTextField.qml</file>
+        <file>NumberButton.qml</file>
+        <file>OtherButton.qml</file>
+        <file>CustomDialog.qml</file>
+        <file>CustomSwitch.qml</file>
+        <file>CustomMenu.qml</file>
+        <file>CustomRadioButton.qml</file>
+    </qresource>
+    <qresource prefix="/js">
+        <file>Functions.js</file>
+    </qresource>
+</RCC>
