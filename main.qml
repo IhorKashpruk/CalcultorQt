@@ -10,7 +10,8 @@ import "qrc:/js/Functions.js" as Functions
 
 ApplicationWindow {
     id: root
-    color: "#fcfdff"
+//    color: "#fcfdff"
+    color: "#ffffff"
     visible: true
     width: 450
     height: 440

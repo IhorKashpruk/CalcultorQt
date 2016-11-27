@@ -37,3 +37,5 @@ HEADERS += \
     number.h \
     symbol.h \
     converter.h
+
+DISTFILES +=

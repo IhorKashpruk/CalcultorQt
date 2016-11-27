@@ -1,7 +1,7 @@
 
 function addText(obj, text_to_input) {
     if(obj.selectionStart !== obj.selectionEnd)
-    obj.cut();
+        obj.cut();
     obj.insert(obj.cursorPosition, text_to_input);
 }
 

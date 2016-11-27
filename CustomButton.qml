@@ -31,4 +31,5 @@ Button {
         border.width: 1.2
         radius: 2
     }
+
 }

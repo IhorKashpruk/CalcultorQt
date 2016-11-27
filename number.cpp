@@ -14,22 +14,13 @@ Number::Number(const std::string &number, bool validate_on)
 }
 
 Number::Number() : value(0.0) {}
-
 Number::Number(const Number &obj) { this->value = obj.getValue(); }
-
 Number::Number(const double value_) { value = value_; }
-
-
 double Number::getValue() const { return value; }
-
 std::string Number::getValueStr() const { return this->operator std::string(); }
-
 Number Number::operator+(const Number &obj) const { return (this->value+obj.getValue()); }
-
 Number Number::operator-(const Number &obj) const { return (this->value-obj.getValue()); }
-
 Number Number::operator*(const Number &obj) const { return (this->value*obj.getValue()); }
-
 Number Number::operator/(const Number &obj) const { return (this->value/obj.getValue()); }
 
 Number &Number::operator =(const Number &obj)

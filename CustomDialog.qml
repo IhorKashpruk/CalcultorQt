@@ -15,14 +15,13 @@ Window {
     minimumWidth: 310
     maximumHeight: 350
     maximumWidth: 310
-    x: 0
+    flags: Qt.WindowTitleHint
 
     Converter{
         id: converter
     }
 
     Rectangle {
-        color: "white"
         implicitWidth: 210
         implicitHeight: 350
         ColumnLayout{
@@ -113,7 +112,7 @@ Window {
             }
 
             CustomButton{
-                text: "Covert"
+                text: "Convert"
                 backgroundObj.implicitWidth: resultField.width
                 width: resultField.width
                 textColor: "#17a81a"

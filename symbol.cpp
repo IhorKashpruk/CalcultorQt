@@ -57,7 +57,10 @@ vec_sh_ptr right_brace_symbol::add_operation(const Symbol &s) const {
 /*                  Class week_symbol                   */
 week_symbol::week_symbol(const std::string &text) : Symbol(SYMBOL_TYPE::WEEK_SYMBOL, text) {}
 vec_sh_ptr week_symbol::add_operation(const Symbol &s) const {
-    if(s.getType() != S_T::NUMBER && s.getType() != S_T::WEEK_SYMBOL && s.getType() != S_T::LEFT_BRACE)
+    if(s.getType() != S_T::NUMBER && s.getType() != S_T::WEEK_SYMBOL && s.getType() != S_T::LEFT_BRACE\
+            && s.getType() != S_T::COMMAND)
+        throw my::exception(my::TYPE_OF_ERROR::VERIFICATION, "class week_symbol::add_operation(...)","Can't add '" + s.getText() + "' to '" + text + "'!");
+    if(s.getText() == "^" || s.getText() == "!")
         throw my::exception(my::TYPE_OF_ERROR::VERIFICATION, "class week_symbol::add_operation(...)","Can't add '" + s.getText() + "' to '" + text + "'!");
     if(s.getType() == S_T::WEEK_SYMBOL)
         return vec_sh_ptr{std::make_shared<week_symbol>(text!=s.getText()?"-":"+")};
@@ -67,7 +70,9 @@ vec_sh_ptr week_symbol::add_operation(const Symbol &s) const {
 /*                  Class strong_symbol                  */
 strong_symbol::strong_symbol(const std::string &text) : Symbol(SYMBOL_TYPE::STRONG_SYMBOL, text) {}
 vec_sh_ptr strong_symbol::add_operation(const Symbol &s) const {
-    if(s.getType() != S_T::NUMBER && s.getType() != S_T::LEFT_BRACE)
+    if(s.getType() != S_T::NUMBER && s.getType() != S_T::LEFT_BRACE && s.getType() != S_T::COMMAND)
+        throw my::exception(my::TYPE_OF_ERROR::VERIFICATION, "class strong_symbol::add_operation(...)","Can't add '" + s.getText() + "' to '" + text + "'!");
+    if(s.getText() == "^" || s.getText() == "!")
         throw my::exception(my::TYPE_OF_ERROR::VERIFICATION, "class strong_symbol::add_operation(...)","Can't add '" + s.getText() + "' to '" + text + "'!");
     return vec_sh_ptr{std::make_shared<strong_symbol>(text), std::shared_ptr<Symbol>(make_symbol(s))};
 }
