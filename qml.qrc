@@ -8,7 +8,6 @@
         <file>OtherButton.qml</file>
         <file>CustomDialog.qml</file>
         <file>CustomSwitch.qml</file>
-        <file>CustomMenu.qml</file>
         <file>CustomRadioButton.qml</file>
     </qresource>
     <qresource prefix="/js">
