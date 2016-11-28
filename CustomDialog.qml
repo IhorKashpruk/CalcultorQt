@@ -16,6 +16,7 @@ Window {
     maximumHeight: 350
     maximumWidth: 310
     flags: Qt.WindowTitleHint
+    color: "#fcfdff"
 
     Converter{
         id: converter
@@ -37,6 +38,7 @@ Window {
                 horizontalAlignment: Text.AlignLeft
                 width: 270
                 backgroundObj.border.color: "#9E9E9E"
+                font.pointSize: 10
             }
             RowLayout{
                 anchors.topMargin: 10
@@ -118,6 +120,7 @@ Window {
                 textColor: "#17a81a"
                 onClicked: {
                     var str = input.text;
+                    resultField.font.pointSize = 10
                     if(str.length != 0){
                         converter.setQStr(str);
                         if(decimalButtonFrom.checked && converter.numberVer()){
@@ -160,7 +163,8 @@ Window {
                             else resultField.text = str;
                             return;
                         }
-                        resultField.text = "Error";
+                        resultField.font.pointSize = 8
+                        resultField.text = "Please enter the correct data in the field";
                     }
                 }
             }
