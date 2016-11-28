@@ -10,8 +10,8 @@ import "qrc:/js/Functions.js" as Functions
 
 ApplicationWindow {
     id: root
-//    color: "#fcfdff"
-    color: "#ffffff"
+    color: "#fcfdff"
+//    color: "#ffffff"
     visible: true
     width: 450
     height: 440
@@ -31,9 +31,12 @@ Column{
     spacing: 5
     anchors.margins: 5
 
-    CustomSwitch{
-        text: "Converter"
-        anchors.horizontalCenter: parent.horizontalCenter
+    Row{
+        width: parent.width
+        height: 30
+        CustomSwitch{
+            text: "Converter"
+        }
     }
 
     Rectangle{
@@ -48,6 +51,9 @@ Column{
             ScrollView {
                 Layout.fillHeight: true
                 Layout.fillWidth: true
+
+                Rectangle{ anchors.fill: parent; border.color: "#D8E2DC"}
+
                 ListView {
                     id: view
                     model: history
@@ -64,14 +70,16 @@ Column{
                         Row{
                             spacing: 5
                             CustomText{
-                                text: " "+model.expression
+                                text: model.expression.length > (35) ? model.expression.substr(0,35)+"...\t="
+                                                                     : model.expression+"\t="
+
+
                                 width: view.width - 120
                             }
-                            CustomText { text: " = " }
 
                             CustomText{
                                 text: model.result
-                                width: 67
+                                width: 90
                                 horizontalAlignment: Text.AlignRight
                             }
 
@@ -123,6 +131,7 @@ Column{
             CustomTextField{
                 id: myTextField
                 Layout.fillWidth: true
+                backgroundObj.border.color: "transparent"
             }
         }
 
@@ -170,6 +179,8 @@ Column{
         OtherButton{
             text: "CE"
             onClicked: { myTextField.text = "";}
+            backgroundObj.color: "#FFA69E"
+            textColor: "white"
         }
         OtherButton{
             text: "x!"
