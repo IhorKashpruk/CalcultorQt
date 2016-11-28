@@ -70,7 +70,7 @@ Column{
                         Row{
                             spacing: 5
                             CustomText{
-                                text: model.expression.length > (35) ? model.expression.substr(0,35)+"...\t="
+                                text: model.expression.length > (30) ? model.expression.substr(0,30)+"...\t="
                                                                      : model.expression+"\t="
 
 
@@ -181,6 +181,7 @@ Column{
             onClicked: { myTextField.text = "";}
             backgroundObj.color: "#FFA69E"
             textColor: "white"
+            font.pointSize: 10
         }
         OtherButton{
             text: "x!"

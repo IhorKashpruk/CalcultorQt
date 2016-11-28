@@ -15,7 +15,7 @@ const std::map<std::string, std::string> commandMap{
         {"pow",     "^"},
         {"cos",     "c"},
         {"sin",     "s"},
-        {"tg",      "t"},
+        {"tan",      "t"},
         {"!",       "!"},
         {"ln",      "l"},
         {"log",     "j"}
