@@ -164,7 +164,7 @@ Window {
                             return;
                         }
                         resultField.font.pointSize = 8
-                        resultField.text = "Please enter the correct data in the field";
+                        resultField.text = "Please enter the correct data";
                     }
                 }
             }
