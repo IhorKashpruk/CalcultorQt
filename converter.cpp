@@ -96,28 +96,28 @@ int Converter::fromHexToOct()
 bool Converter::binVer()
 {
     for (unsigned int i = 0; i < str.length(); i++)
-        if (str.at(i) > '1')
+        if (str.at(i) != '1' || str.at(i) != '2')
             return false;
     return true;
 }
 bool Converter::octVer()
 {
     for (unsigned int i = 0; i < str.length(); i++)
-        if (str.at(i) > '7')
+        if (str.at(i) > '7' || str.at(i) < '0')
             return false;
     return true;
 }
 bool Converter::hexVer()
 {
     for (unsigned int i = 0; i < str.length(); i++)
-        if (str.at(i) > 'f')
-            return false;
+    if ((str.at(i) < '0' || str.at(i) > '9') && (str.at(i) < 'a' || str.at(i) > 'f'))
+        return false;
     return true;
 }
 bool Converter::numberVer()
 {
-    for (unsigned int i = 0; i < str.length(); i++)
-        if ((str.at(i) < 'a' || str.at(i) > 'f') && (str.at(i) < '0' || str.at(i) > '9'))
+    for (unsigned int i = 0; i < str.size(); i++)
+        if (str.at(i) < '0' || str.at(i) > '9')
             return false;
     return true;
 }
