@@ -10,13 +10,13 @@ Validator::Validator(const std::string &text) : text(text) {}
 bool Validator::validate() {
     if(text.empty()) return false;
     std::string resoult_str(text);
-    std::for_each(commandMap.begin(), commandMap.end(), [&resoult_str](auto& pair){
+    for(auto& pair: commandMap){
         size_t pos = 0;
             while((pos = resoult_str.find(pair.first, pos)) != std::string::npos){
                 resoult_str.replace(pos, pair.first.size(), pair.second);
                 pos += pair.second.size();
         }
-    });
+    };
     if(weekSymbols.find(resoult_str[0]) != std::string::npos)
         resoult_str.insert(resoult_str.begin(), '0');
     std::shared_ptr<Symbol> firstSymbol(make_symbol(resoult_str[0]));
