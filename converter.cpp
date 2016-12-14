@@ -96,7 +96,7 @@ int Converter::fromHexToOct()
 bool Converter::binVer()
 {
     for (unsigned int i = 0; i < str.length(); i++)
-        if (str.at(i) != '1' || str.at(i) != '2')
+        if (str.at(i) != '0' && str.at(i) != '1')
             return false;
     return true;
 }
