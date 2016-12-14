@@ -11,15 +11,6 @@ QString Manager::calculate(const QString &str)
         return "Error: " + QString(ex.what());
     }
 }
-{
-    try{
-        Validator validator("1+2-3+d");
-        validator.validate();               // <- throw error
-    }catch(const my::exception& ex){
-        // print error
-    }
-        
-}
 
 Manager::Manager() : QObject()
 {
