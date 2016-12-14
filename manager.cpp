@@ -13,8 +13,8 @@ QString Manager::calculate(const QString &str)
 }
 {
     try{
-        Validator validator("1+2-3+d");     // <- throw error
-        validator.validate();
+        Validator validator("1+2-3+d");
+        validator.validate();               // <- throw error
     }catch(const my::exception& ex){
         // print error
     }
