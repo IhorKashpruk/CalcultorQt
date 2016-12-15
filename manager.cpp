@@ -12,14 +12,6 @@ QString Manager::calculate(const QString &str)
     }
 }
 
-{
-    try{
-        Number result = Calculator().calculate("1+2*23^1");
-    }catch(const my::exception& ex){
-        // print error
-    }
-}
-
 Manager::Manager() : QObject()
 {
 }
